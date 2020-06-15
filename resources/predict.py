@@ -12,7 +12,7 @@ class Predict(Resource):
 	
 	def post(self):
 		img_path = self.parser.parse_args().image_path
-		#self.convert_image(img_path)
+		self.convert_image(img_path)
 		input_arr = self.get_image_from_path(img_path)
 		prediction = self.model.predict(input_arr)
 		class_p = prediction.argmax(axis=-1)
