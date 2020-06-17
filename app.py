@@ -13,4 +13,4 @@ model = load_model(MODEL_PATH)
 api.add_resource(Predict, '/api/predict', resource_class_kwargs = {'model':model})
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run(debug=True, host='0.0.0.0')
